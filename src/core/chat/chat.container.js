@@ -11,18 +11,20 @@ import {MessageModel} from "../message/message.model";
 
 const styles = {
   content: {
+    display: 'flex',
     flex: 1,
     flexDirection: 'column',
-    alignItems: 'center'
+    height: '100%'
   },
   counterBlock: {
-    flex: 1
+    display: 'flex'
   },
   mainBlock: {
-    flex: 1
+    display: 'flex',
+    flex: 1,
   },
   textBlock: {
-    flex: 1,
+    display: 'flex',
 
   }
 };

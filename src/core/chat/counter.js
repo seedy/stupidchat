@@ -4,11 +4,11 @@ import { withStyles } from '@material-ui/core/styles';
 import Badge from '@material-ui/core/Badge';
 import Icon from '@material-ui/core/Icon';
 import {AuthorModel} from "../author/author.model";
-import {AuthorIcon} from "../author/authorIcon";
+import AuthorAvatar from "../author/authorAvatar";
 
 const styles = {
   container: {
-    flex: 1,
+    display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center'
@@ -16,7 +16,10 @@ const styles = {
   title: {
     fontWeight: 'bold',
     padding: '5px'
-  }
+  },
+  badge: {
+    marginRight: '12px'
+  },
 };
 
 export class Counter extends Component {
@@ -29,11 +32,11 @@ export class Counter extends Component {
     const {classes} = this.props;
     return (
       <div className={classes.container}>
-        <AuthorIcon author={this.props.author}/>
+        <AuthorAvatar className={classes.avatar} author={this.props.author}/>
         <span className={classes.title}>
           {this.props.author.toString()}
         </span>
-        <Badge badgeContent={this.props.unread.length} color="secondary">
+        <Badge className={classes.badge} badgeContent={this.props.unread.length} color="secondary">
           <Icon>email</Icon>
         </Badge>
       </div>

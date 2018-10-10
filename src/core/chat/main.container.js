@@ -15,9 +15,10 @@ const rightId = 2;
 
 const styles = {
   content: {
-    flex: 1,
-    flexDirection: 'row',
     padding: '20px'
+  },
+  fullPage: {
+    height: 'calc(100vh - 64px)'
   }
 };
 
@@ -45,7 +46,7 @@ class MainContainer extends Component {
         <header>
           <ChatBar left={this.props.left} right={this.props.right}/>
         </header>
-        <Grid container>
+        <Grid className={classes.fullPage} container>
           <Grid item xs={6} className={classes.content}>
             <ChatContainer author={this.props.left}>
               <HistoryContainer author={this.props.left}/>

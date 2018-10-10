@@ -11,21 +11,23 @@ const styles = {
   container: {
     flex: 1,
     flexDirection: 'column',
-    height: '300px',
     justifyContent: 'space-between',
-    position: 'relative',
-    paddingBottom: '20px'
+    border: '1px solid rgba(0, 0, 0, 0.23)'
   },
   content: {
+    padding: '0 5px',
+    display: 'flex',
     flex: 1,
     flexDirection: 'column',
-    alignItems: 'center',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
     maxHeight: '100%',
+    minHeight: '100%',
     overflowY: 'auto'
   },
-  floating: {
-    position: 'absolute',
-    bottom: 0
+  bottomText: {
+    alignSelf: 'flex-end',
+    justifySelf: 'flex-end'
   }
 };
 
@@ -46,7 +48,7 @@ class HistoryContainer extends Component {
             )
           })}
         </div>
-        {this.props.typing.length > 0 && <span className={classes.floating}>Someone else is typing...</span>}
+        {this.props.typing.length > 0 && <span className={classes.bottomText}>Someone else is typing...</span>}
       </div>
     )
   }

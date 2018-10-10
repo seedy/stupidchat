@@ -11,14 +11,10 @@ const styles = {
   root: {
     flexGrow: 1,
   },
-  grow: {
-    textAlign: 'start',
-    flexGrow: 1,
-  },
-  menuButton: {
-    marginLeft: -12,
-    marginRight: 20,
-  },
+  spacedBar: {
+    display: 'flex',
+    justifyContent: 'space-between',
+  }
 };
 
 class ChatBar extends Component {
@@ -31,10 +27,8 @@ class ChatBar extends Component {
     return (
       <div className={classes.root}>
         <AppBar position="static">
-          <Toolbar>
-            <div className={classes.grow}>
-              <AuthorIcon author={this.props.left}/>
-            </div>
+          <Toolbar className={classes.spacedBar}>
+            <AuthorIcon author={this.props.left}/>
             <AuthorIcon author={this.props.right}/>
           </Toolbar>
         </AppBar>

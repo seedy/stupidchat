@@ -4,14 +4,17 @@ import { withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Icon from '@material-ui/core/Icon';
 import IconButton from '@material-ui/core/IconButton';
+import InputAdornment from '@material-ui/core/InputAdornment';
 
 const styles = {
   container: {
     display: 'flex',
-    verticalAlign: 'middle'
+    alignItems: 'center',
+    marginTop: '21px'
   },
   textField: {
-    width: '80%'
+    display: 'flex',
+    flex: 1
   }
 };
 
@@ -46,10 +49,16 @@ export class TextBox extends Component {
           value={this.props.typing}
           onFocus={() => this.props.focus()}
           onChange={(e) => this._onType(e)}
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position="end">
+                <IconButton onClick={() => this._onSend()} color="secondary" aria-label="Send message">
+                  <Icon>send</Icon>
+                </IconButton>
+              </InputAdornment>
+            ),
+          }}
         />
-        <IconButton onClick={() => this._onSend()} color="secondary" aria-label="Send message">
-          <Icon>send</Icon>
-        </IconButton>
       </div>
     );
   }

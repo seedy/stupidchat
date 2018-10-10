@@ -4,19 +4,22 @@ import { withStyles } from '@material-ui/core/styles';
 import {MessageModel} from "../message/message.model";
 import Chip from '@material-ui/core/Chip';
 import {AuthorModel} from "../author/author.model";
+import AuthorAvatar from "../author/authorAvatar";
 
 const styles = {
   container: {
-    flex: 1,
+    display: 'flex',
+    flexShrink: 0,
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'flex-start',
     alignItems: 'center'
   },
   unread: {
     fontWeight: 'bold'
   },
   paragraph: {
-    wordBreak: 'break-all'
+    wordBreak: 'break-all',
+    margin: '0 0 0 5px'
   }
 };
 
@@ -30,7 +33,8 @@ export class Message extends Component {
     const {classes} = this.props;
     return (
       <div className={classes.container}>
-        <Chip label={this.props.message.getDate(this.props.reader.locale) + ' - ' + this.props.message.author.toString()} />
+        <AuthorAvatar author={this.props.message.author}/>
+        <Chip label={this.props.message.getDate(this.props.reader.locale)} />
         <p className={classes.paragraph + ' ' + (this.props.unread ? classes.unread : undefined)}>{this.props.message.text}</p>
       </div>
     );

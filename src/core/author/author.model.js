@@ -54,4 +54,12 @@ export class AuthorModel {
   toString() {
     return this.name + ' ' + this.surname;
   }
+
+  /**
+   *
+   * @returns {*}
+   */
+  getInitial() {
+    return this.name[0];
+  }
 }
