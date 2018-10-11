@@ -59,7 +59,9 @@ class HistoryContainer extends Component {
             })}
           </TransitionGroup>
         </div>
-        {this.props.typing.length > 0 && <span className={classes.bottomText}>Someone else is typing...</span>}
+        <CSSTransition classNames='fade' timeout={500} in={this.props.typing.length > 0} mountOnEnter unmountOnExit>
+          <span className={classes.bottomText}>Someone else is typing...</span>
+        </CSSTransition>
       </div>
     )
   }
