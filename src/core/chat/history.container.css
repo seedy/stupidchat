@@ -1,0 +1,9 @@
+.slide-enter {
+    transform: translateY(100%);
+    opacity: 0.01
+}
+.slide-enter-active {
+    transform: translateY(0);
+    opacity: 1;
+    transition: all 500ms cubic-bezier(0.0, 0.0, 0.2, 1);
+}

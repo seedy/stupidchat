@@ -3,10 +3,17 @@ import { connect } from 'react-redux';
 import {compose} from 'redux';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
+import {
+  CSSTransition,
+  TransitionGroup,
+} from 'react-transition-group';
+
 import {MessageModel} from "../message/message.model";
 import {AuthorModel} from "../author/author.model";
 import Message from '../message/message';
 
+
+import './history.container.css';
 const styles = {
   container: {
     flex: 1,
@@ -41,12 +48,16 @@ class HistoryContainer extends Component {
     return (
       <div className={classes.container}>
         <div className={classes.content}>
-          {this.props.history.map((message) => {
-            const isMsgUnread = this.props.unread.indexOf(message.id) !== -1;
-            return (
-              <Message key={message.id} message={message} unread={isMsgUnread} reader={this.props.author}/>
-            )
-          })}
+          <TransitionGroup>
+            {this.props.history.map((message) => {
+              const isMsgUnread = this.props.unread.indexOf(message.id) !== -1;
+              return (
+                <CSSTransition key={message.id} classNames='slide' timeout={500}>
+                  <Message className={classes.child} key={message.id} message={message} unread={isMsgUnread} reader={this.props.author}/>
+                </CSSTransition>
+              )
+            })}
+          </TransitionGroup>
         </div>
         {this.props.typing.length > 0 && <span className={classes.bottomText}>Someone else is typing...</span>}
       </div>
