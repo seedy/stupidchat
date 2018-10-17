@@ -1,12 +1,16 @@
 import moment from 'moment-timezone';
+import {AuthorModel} from "../author/author.model";
 
 export class MessageModel {
   /**
    *
-   * @param text
-   * @param author
+   * @param text {string}
+   * @param author {AuthorModel}
    */
   constructor(text, author) {
+    if (!(author instanceof AuthorModel)) {
+      throw new Error('author is not instance of AuthorModel');
+    }
     this.text = text;
     this.author = author;
     this.timestamp = new Date().valueOf();

@@ -19,11 +19,11 @@ export class AuthorModel {
 
   /**
    *
-   * @param id string
-   * @param name string
-   * @param surname string
-   * @param city string
-   * @param locale string
+   * @param id {number}
+   * @param [name] {string}
+   * @param [surname] {string}
+   * @param [city] {string}
+   * @param [locale] {string}
    */
   constructor(id, name, surname, city, locale) {
     this.id = id;

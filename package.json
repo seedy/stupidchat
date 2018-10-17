@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^3.2.0",
+    "enzyme": "^3.7.0",
     "moment": "^2.22.2",
     "moment-timezone": "^0.5.21",
     "prop-types": "^15.6.2",
@@ -11,6 +12,7 @@
     "react-dom": "^16.5.2",
     "react-redux": "^5.0.7",
     "react-scripts": "2.0.4",
+    "react-test-renderer": "^16.5.2",
     "react-transition-group": "^2.5.0",
     "redux": "^4.0.0"
   },
@@ -28,5 +30,8 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "react-test-render": "^1.1.1"
+  }
 }
