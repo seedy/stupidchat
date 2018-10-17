@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing author icon AuthorIcon 1`] = `
+<button
+  aria-describedby={null}
+  aria-label="John Doe"
+  className="MuiButtonBase-root-14 MuiIconButton-root-8 MuiIconButton-colorInherit-9"
+  disabled={false}
+  onBlur={[Function]}
+  onFocus={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onMouseDown={[Function]}
+  onMouseLeave={[Function]}
+  onMouseOver={[Function]}
+  onMouseUp={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  tabIndex="0"
+  title="John Doe"
+  type="button"
+>
+  <span
+    className="MuiIconButton-label-13"
+  >
+    <span
+      aria-hidden="true"
+      className="material-icons MuiIcon-root-17"
+    >
+      account_circle
+    </span>
+  </span>
+  <span
+    className="MuiTouchRipple-root-26"
+  />
+</button>
+`;
